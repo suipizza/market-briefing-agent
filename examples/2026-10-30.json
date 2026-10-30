@@ -1,0 +1,184 @@
+{
+  "run_date": "2026-10-30",
+  "target_us_date": "2026-10-29",
+  "is_us_holiday": false,
+  "as_of": "2026-10-30T09:00:00+09:00",
+  "generated_at": "2026-10-30T22:22:43+09:00",
+  "btc": {
+    "as_of": "2026-10-30T09:00:00+09:00",
+    "price": 77962.6,
+    "change_24h_pct": -4.1155,
+    "change_4h_pct": -3.5235,
+    "oi_btc": 94785.416,
+    "oi_change_24h_pct": -1.0443,
+    "oi_change_4h_pct": 1.3062,
+    "oi_change_7d_pct": -1.1742,
+    "funding_rate_pct": 0.0036,
+    "futures_cvd_24h_btc": -9891.272,
+    "futures_cvd_24h_ratio_pct": -3.8983,
+    "futures_cvd_4h_ratio_pct": -8.2102,
+    "spot_cvd_24h_btc": -618.6998,
+    "spot_cvd_24h_ratio_pct": -2.5961
+  },
+  "etf": {
+    "target_date": "2026-10-29",
+    "net_flow_musd": 17.0719,
+    "ibit_net_flow_musd": 12.7974,
+    "ibit_included": true,
+    "streak_days": 4,
+    "streak_sign": "+",
+    "sum_5d_musd": 302.8034,
+    "memo": "4일 연속 순유입, 5일 누적 +302.8$M",
+    "source": "total",
+    "coverage": null,
+    "by_etf": null,
+    "is_provisional": true,
+    "data_status": "정상"
+  },
+  "macro": {
+    "us10y": {
+      "close": 4.989,
+      "as_of": "2026-10-29",
+      "unit": "bp",
+      "chg_1d": -5.6,
+      "chg_5d": 3.6,
+      "chg_20d": -24.8,
+      "range_pos_1y": 76.1305,
+      "high_52w": 5.311,
+      "low_52w": 3.962,
+      "dist_52w_high_pct": -6.0629,
+      "dist_52w_low_pct": 25.9213,
+      "big_move": false,
+      "near_extreme": null
+    },
+    "dxy": {
+      "close": 102.04,
+      "as_of": "2026-10-29",
+      "unit": "%",
+      "chg_1d": -0.1468,
+      "chg_5d": 0.4232,
+      "chg_20d": -0.0588,
+      "range_pos_1y": 91.5094,
+      "high_52w": 102.58,
+      "low_52w": 96.22,
+      "dist_52w_high_pct": -0.5264,
+      "dist_52w_low_pct": 6.0486,
+      "big_move": false,
+      "near_extreme": "high"
+    },
+    "nasdaq": {
+      "close": 26184.7207,
+      "as_of": "2026-10-29",
+      "unit": "%",
+      "chg_1d": -1.3753,
+      "chg_5d": 0.6762,
+      "chg_20d": -2.5562,
+      "range_pos_1y": 79.2059,
+      "high_52w": 27599.7891,
+      "low_52w": 20794.6406,
+      "dist_52w_high_pct": -5.1271,
+      "dist_52w_low_pct": 25.9205,
+      "big_move": null,
+      "near_extreme": null
+    }
+  },
+  "tags": {
+    "flow": "유입",
+    "risk": "약함",
+    "position": "정상",
+    "cvd_oi": "롱 청산 하락(투매)",
+    "cvd_oi_4h": "신규 숏 주도 하락",
+    "flow_memo": "4일 연속 순유입, 5일 누적 +302.8$M",
+    "macro_memo": "DXY 52주 고점 근처(고점 대비 -0.53%) | 10Y 4.99% (1일 -5.6bp, 5일 +3.6bp) · DXY 102.04 (1일 -0.15%, 5일 +0.42%)"
+  },
+  "status": {
+    "run": "성공",
+    "flow_data": "정상",
+    "errors": []
+  },
+  "stage": "written",
+  "narrative": {
+    "one_liner": "바이낸스 해킹 충격 속 BTC 4% 급락과 롱 청산, ETF 4일 연속 유입에도 위험 선호는 약한 흐름.",
+    "macro": "달러인덱스는 102.04로 1일 −0.15% 내렸지만 52주 고점(102.58)과의 차이가 −0.53%에 그쳐 고점권에 머물렀다. 10년물은 4.99%로 1일 −5.6bp, 5일 +3.6bp다. 3분기 GDP 속보치는 3.4%로 예상을 웃돌았고 9월 PCE 물가는 전년비 3.6%로 높아졌다. FOMC는 3.75~4.00%로 동결했지만 2명이 인상에 반대표를 냈다. 선물시장은 12월 인상 확률을 85%로 반영 중이라는 보도도 나왔다(보도 기준). 강달러·고금리 부담이 이어지는 환경은 BTC 같은 위험자산에 불리하다. 나스닥은 알파벳의 실적 후 사상 최대 낙폭에 −1.38% 내렸고, 위험 선호는 약한 흐름이다. (BEA, CNBC)",
+    "derivatives": "가격 −4.12%, OI −1.04%, 선물 CVD 비율 −3.90%로 롱 청산 하락(투매) 구간이다. 매도 우위 속에 기존 롱이 정리되며 가격과 미결제약정이 함께 줄었다. 최근 4시간은 가격 −3.52%, OI +1.31%, CVD 비율 −8.21%로 신규 숏 주도 하락으로 바뀌었다. 포지션은 정상 범위이며, 펀딩비는 0.0036%, OI 7일 변화는 −1.17%다. 현물 ETF는 4일 연속 순유입, 5일 누적 +302.8$M이다. 10/29 순유입 +17.1$M 가운데 IBIT이 +12.8$M으로 대부분을 차지했다. CVD는 바이낸스 단일 거래소 기준 근사치다. 바이낸스 입출금이 중단된 상황이라 해석에 유의해야 한다.",
+    "news_geo": "[중, −] 이란 혁명수비대는 호르무즈 해협 인근에서 유조선 4척이 기뢰에 맞았다고 주장하며, 미 중부사령부의 항로 기뢰 제거 발표를 반박했다. 미 중부사령관이 트럼프 대통령에게 대이란 군사 옵션을 보고했다는 보도도 나왔다. 이에 11/3 중간선거 이후 교전이 재개될 수 있다는 우려가 커졌다. 후티 반군의 사우디 공격 강화까지 겹쳐 유가가 올랐고, 유가발 인플레이션이 금리 부담을 키우고 있다. (CNBC)",
+    "news_crypto": "[강, −] 바이낸스가 보안 침해를 확인하고 입출금을 중단했다. 피해 규모는 약 6,300$M으로 사상 최대 크립토 해킹이라는 보도가 나왔다(보도 기준). Circle·Tether는 관련 자금 동결에 나섰다. TRM Labs·Elliptic은 북한 연계 해커의 소행으로 판단했다. (CNBC, CoinDesk)\n[중, −] 해커가 탈취한 USDT를 담보로 약 44.6$M 규모의 이더를 빌렸다고 보도됐다(보도 기준). 이에 Aave가 16개 네트워크의 대출 시장을 동결해 디파이로 2차 파급이 번질 수 있다는 우려가 커졌다. (CoinDesk)",
+    "calendar": "10/31(토) 01:00 데일리 샌프란시스코 연은 총재 발언 (경제연구 심포지엄 개회사)\n10/31(토) 01:30 무살렘 세인트루이스 연은 총재 발언 (Shadow Open Market Committee 기조연설)"
+  },
+  "etf_confirmation_of_previous": null,
+  "run": {
+    "started_at": "2026-10-30T22:22:35+09:00",
+    "duration_sec": 8.6,
+    "dry_run": false,
+    "stages": {
+      "collect": {
+        "ok": true,
+        "sec": 8.57
+      },
+      "etf_confirm": {
+        "ok": true,
+        "sec": 0.0
+      },
+      "notion_write": {
+        "ok": true,
+        "sec": 0.0
+      }
+    }
+  },
+  "llm": {
+    "prompt_version": "v2",
+    "passed": 6,
+    "total": 6,
+    "rejected": {},
+    "warnings": [],
+    "sources": [
+      {
+        "title": "Biggest-ever crypto hack impacts $6.3 billion as Binance works to contain fallout",
+        "url": "https://www.cnbc.com/2026/10/29/circle-tether-freeze-funds-impacted-by-potential-binance-security-issue.html",
+        "used_in": "news_crypto"
+      },
+      {
+        "title": "Binance loses over $6 billion in the largest crypto hack to date",
+        "url": "https://www.coindesk.com/business/2026/10/29/potential-multi-billion-binance-hack-hitting-crypto-markets",
+        "used_in": "news_crypto"
+      },
+      {
+        "title": "BTC price falls to $76,400 Binance hack triggers $1.57 billion in liquidations: Crypto Markets Today",
+        "url": "https://www.coindesk.com/markets/2026/10/30/crypto-liquidations-jump-to-usd1-57-billion-as-binance-hack-sends-bitcoin-ether-lower",
+        "used_in": "news_crypto"
+      },
+      {
+        "title": "Iran claims four tankers struck mines in Hormuz as strike fears grow after U.S. midterms",
+        "url": "https://www.cnbc.com/2026/10/30/iran-trump-hormuz-oil-middle-east-.html",
+        "used_in": "news_geo"
+      },
+      {
+        "title": "Oil rises on supply concerns as Houthis attack Saudi Arabia",
+        "url": "https://cnbc.com/2026/10/30/oil-rises-on-supply-concerns-as-houthis-attack-saudi-arabia.html",
+        "used_in": "news_geo"
+      },
+      {
+        "title": "GDP (Advance Estimate), 3rd Quarter 2026",
+        "url": "https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026",
+        "used_in": "macro"
+      },
+      {
+        "title": "Fed rate decision October 2026",
+        "url": "https://www.cnbc.com/2026/10/28/fed-meeting-today-live-updates.html",
+        "used_in": "macro"
+      },
+      {
+        "title": "Nasdaq falls as Alphabet set for record loss amid AI spending woes",
+        "url": "https://www.detroitnews.com/story/business/2026/10/29/nasdaq-slides-over-1-as-alphabet-results-revive-ai-spending-fears/92495558007/",
+        "used_in": "macro"
+      },
+      {
+        "title": "What are the main events for today?",
+        "url": "https://investinglive.com/news/what-are-the-main-events-for-today-75/",
+        "used_in": "calendar"
+      }
+    ],
+    "duration_sec": 132.3,
+    "num_turns": 16
+  }
+}
