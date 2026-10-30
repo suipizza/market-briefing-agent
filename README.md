@@ -3,7 +3,9 @@
 비트코인 선물 데스크의 **매일 아침 마켓 브리핑**을 자동으로 만드는 에이전트.
 숫자 수집과 분류는 코드가, 뉴스와 해석은 LLM이 맡아서 평일 아침마다 노션 DB에 한 페이지를 쓴다.
 
-<!-- TODO: 노션 페이지 스크린샷 docs/images/notion_page.png -->
+<img src="docs/images/notion_page_02.png" alt="노션 브리핑 페이지: 코드가 정한 태그·메모와 LLM이 쓴 서술" width="720">
+
+*2026-10-30 브리핑 페이지. 수급·포지션·위험선호 태그와 메모는 코드가, 뉴스와 해석 서술은 LLM이 썼다.*
 
 ## 배경
 
@@ -80,6 +82,13 @@ python3.12 -m venv .venv && .venv/bin/pip install -r requirements.txt   # Python
 | 크립토 뉴스 | [강, −] 바이낸스 보안 침해 확인, 입출금 중단 ... |
 
 이날 LLM은 데이터 출처가 바이낸스라는 점을 연결해서, 파생 서술 끝에 "바이낸스 입출금이 중단된 상황이라 해석에 유의해야 한다"고 덧붙였다.
+
+<details>
+<summary>같은 페이지의 숫자 속성과 매크로 서술</summary>
+
+<img src="docs/images/notion_page_01.png" alt="노션 브리핑 페이지: 숫자 속성과 매크로 서술" width="720">
+
+</details>
 
 프롬프트를 v1에서 v2로 고친 전후 비교는 [examples/prompt_v1_vs_v2_2026-10-24.json](examples/prompt_v1_vs_v2_2026-10-24.json)에 있다 (한줄 판단 132자 세 문장 → 52자 한 문장, 단위·출처 표기 통일).
 
