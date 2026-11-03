@@ -64,6 +64,12 @@ class TestCompute:
         assert out["data_status"] == "잠정"
         assert out["memo"].endswith("(잠정 2/3)")
 
+    def test_fallback_requires_large_etfs(self):
+        # 2026-11-03 실제 사례: 대형 ETF 미정산, 소형은 0으로 찍혀 합계 0.0이 됨 → 빈칸이어야 한다
+        raw = {**self.raw, "by_etf": {"IBIT": None, "FBTC": None, "ARKB": 0.0, "BITB": 0.0, "GBTC": 0.0}}
+        out = flows.compute(raw, date(2026, 10, 7), False)
+        assert out["data_status"] == "미반영" and out["net_flow_musd"] is None
+
     def test_fallback_none_reported(self):
         raw = {**self.raw, "by_etf": {"IBIT": None, "FBTC": None}}
         assert flows.compute(raw, date(2026, 10, 7), False)["data_status"] == "미반영"

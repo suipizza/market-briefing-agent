@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import logging
+import time as time_
 from datetime import date, datetime, time
 
 from briefing import config
@@ -51,14 +52,24 @@ def collect(run_date: date) -> dict:
     errors: list[dict] = []
     log.info("collect run_date=%s us_target=%s holiday=%s as_of=%s", run_date, us.target_date, us.is_holiday, as_of)
 
-    btc = binance.collect(as_of, errors)
+    timings: dict[str, float] = {}
 
-    etf_raw = sosovalue.collect(us.target_date, errors) if not us.is_holiday else {}
+    def timed(name: str, fn, *args):
+        t0 = time_.monotonic()
+        try:
+            return fn(*args)
+        finally:
+            timings[name] = round(time_.monotonic() - t0, 1)
+            log.info("source %s took %.1fs", name, timings[name])
+
+    btc = timed("binance", binance.collect, as_of, errors)
+
+    etf_raw = timed("sosovalue", sosovalue.collect, us.target_date, errors) if not us.is_holiday else {}
     etf = flows.compute(etf_raw, us.target_date, us.is_holiday)
     if etf["data_status"] == "미반영":
-        errors.append({"stage": "sosovalue.total", "msg": f"no row for {us.target_date} yet"})
+        errors.append({"stage": "sosovalue.total", "msg": f"no total or required ETFs for {us.target_date} yet"})
 
-    closes = yahoo.collect(us.target_date, errors)
+    closes = timed("yahoo", yahoo.collect, us.target_date, errors)
     mac = macro.compute(closes, us.target_date, us.is_holiday)
 
     snapshot = {
@@ -77,6 +88,7 @@ def collect(run_date: date) -> dict:
         "flow_data": etf["data_status"],
         "errors": errors,
     }
+    snapshot["source_sec"] = timings
     snapshot["stage"] = "collected"
     return _round(snapshot)
 

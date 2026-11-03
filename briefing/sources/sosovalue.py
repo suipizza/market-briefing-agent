@@ -36,6 +36,7 @@ def _get(path: str, params: dict | None = None) -> list[dict]:
     if not config.SOSOVALUE_API_KEY:
         raise RuntimeError("SOSOVALUE_API_KEY is not set")
     _throttle()
+    t0 = time.monotonic()
     data = request_json(
         "GET",
         f"{config.SOSOVALUE_URL}{path}",
@@ -44,6 +45,9 @@ def _get(path: str, params: dict | None = None) -> list[dict]:
         retries=config.SOSOVALUE_MAX_RETRIES,
         wait_sec=config.SOSOVALUE_RETRY_WAIT_SEC,
     )
+    elapsed = time.monotonic() - t0
+    if elapsed > 5:
+        log.warning("sosovalue slow response %s: %.1fs", path, elapsed)
     # 응답이 배열이거나 {"code":0, "data":[...]} 형태일 수 있다
     if isinstance(data, dict):
         if data.get("code") not in (None, 0, "0"):

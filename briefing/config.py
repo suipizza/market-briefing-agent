@@ -63,6 +63,7 @@ NEAR_EXTREME_DIST_PCT = 2.0  # 52주 고점·저점 2% 이내
 # --- ETF ---
 ETF_SUM_DAYS = 5
 ETF_HISTORY_DAYS = 30        # 연속 일수 계산용 조회 범위
+ETF_SUM_REQUIRED = ("IBIT", "FBTC")  # ETF별 합산 잠정치를 만들려면 정산돼 있어야 하는 대형 ETF
 
 # --- LLM (Claude Code CLI 헤드리스, 구독 인증) ---
 CLAUDE_BIN = os.getenv("CLAUDE_BIN", "").strip()   # 비우면 PATH와 ~/.local/bin에서 찾는다

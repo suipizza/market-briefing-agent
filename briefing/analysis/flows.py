@@ -43,12 +43,16 @@ def memo(streak_days: int, sign: str | None, sum_5d: float | None, coverage: str
 
 
 def etf_sum(by_etf: dict[str, float | None] | None) -> tuple[float, str] | None:
-    """ETF별 값 합산. (합계 $M, '반영 수/전체 수'). 반영된 ETF가 없으면 None."""
+    """ETF별 값 합산. (합계 $M, '반영 수/전체 수').
+
+    필수 ETF(IBIT 등 대형)가 아직 정산 전이면 None. 소형 ETF는 보고 전에도 0으로 찍히는 경우가 있어서,
+    대형이 빠진 합산은 0이나 작은 값으로 나와 틀린 숫자가 된다 (2026-11-03: 6/12 반영, 합계 0.0).
+    """
     if not by_etf:
         return None
-    reported = [v for v in by_etf.values() if v is not None]
-    if not reported:
+    if any(by_etf.get(t) is None for t in config.ETF_SUM_REQUIRED):
         return None
+    reported = [v for v in by_etf.values() if v is not None]
     return sum(reported), f"{len(reported)}/{len(by_etf)}"
 
 
